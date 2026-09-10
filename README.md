@@ -1,6 +1,6 @@
-# Jeu pédagogique marque blanche
+# Les 6 étapes
 
-Application PHP pour transformer un jeu d’étapes de création d'entreprise en outil pédagogique administrable, jouable seul, jouable en session compétitive et imprimable.
+Jeu pédagogique marque blanche : retrouver l’ordre des étapes de création d’entreprise, classer les actions, jouer **seul hors ligne** ou en **compétition de classe via un lien / QR**. PWA + app iOS.
 
 Deux modes de données existent pendant la transition SaaS :
 
