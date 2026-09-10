@@ -1,0 +1,206 @@
+{
+    "settings": {
+        "layout": "Grille",
+        "showTimer": false,
+        "showHints": false,
+        "requireOrderFirst": true,
+        "showSessionJoin": false,
+        "showLiveLeaderboard": true,
+        "classroomAmbiance": "chaos",
+        "enableCaseRound": true,
+        "enableBadges": true,
+        "enableTrapCards": true,
+        "difficultyMode": "progressive",
+        "accentColor": "#6A53D8"
+    },
+    "brand": {
+        "logoPath": "uploads/brands/brand-logo-20260429-074451-44ccac38.png",
+        "faviconPath": "",
+        "palette": [
+            "#6A53D8",
+            "#983BD0",
+            "#346CAF",
+            "#575BCA",
+            "#8447E5",
+            "#8E42DB"
+        ],
+        "decorations": "💡 🔎 💶 🤝 ⚖️ 🚀",
+        "showDecorations": true,
+        "decorationIntensity": "normal",
+        "visualStyle": "classe"
+    },
+    "theme": {
+        "primary": "#6A53D8",
+        "secondary": "#983BD0",
+        "accent": "#346CAF",
+        "background": "#EEF3FB",
+        "surface": "#FFFFFF",
+        "text": "#1A1F36",
+        "muted": "#6B7280"
+    },
+    "ui": {
+        "appName": "Les 6 étapes",
+        "brandName": "Création d’entreprise",
+        "documentTitle": "Les 6 étapes de la création d’entreprise",
+        "hintDefault": "Clique sur l’étape correspondante à la carte en cours.",
+        "hintButton": "Indice",
+        "skipButton": "Revoir plus tard",
+        "resetButton": "Recommencer",
+        "completionAdminLabel": "Admin",
+        "homeTitle": "Comprendre pour se lancer",
+        "homeBody": "Classe chaque action au bon moment du parcours. L’objectif n’est pas d’aller vite : c’est de voir comment on crée vraiment une entreprise — et, si tu en as envie, comment te lancer ensuite avec le statut étudiant-entrepreneur.",
+        "homeButton": "Commencer",
+        "sneeTitle": "Envie de te lancer ?",
+        "sneeBody": "Si l’atelier t’a donné envie de créer, le Statut National Étudiant-Entrepreneur (SNEE) permet de monter un projet tout en restant étudiant, avec l’accompagnement d’une Pépite près de chez toi.",
+        "sneeCta": "Découvrir le SNEE",
+        "sneeUrl": "https://pepite-france.fr/"
+    },
+    "steps": [
+        {
+            "id": 1,
+            "title": "Évaluer et valider l'idée",
+            "short": "Valider l'idée",
+            "color": "#1D5BD4"
+        },
+        {
+            "id": 2,
+            "title": "Étudier le marché",
+            "short": "Étudier le marché",
+            "color": "#6D28D9"
+        },
+        {
+            "id": 3,
+            "title": "Chiffrer le projet",
+            "short": "Chiffrer le projet",
+            "color": "#059669"
+        },
+        {
+            "id": 4,
+            "title": "Financer le projet",
+            "short": "Financer le projet",
+            "color": "#D97706"
+        },
+        {
+            "id": 5,
+            "title": "Choisir la structure juridique",
+            "short": "Structure juridique",
+            "color": "#DC2626"
+        },
+        {
+            "id": 6,
+            "title": "Créer l'entreprise",
+            "short": "Créer l'entreprise",
+            "color": "#0891B2"
+        }
+    ],
+    "cards": [
+        {
+            "id": 1,
+            "stepId": 1,
+            "title": "Définir et valider l'idée",
+            "desc": "Avoir une idée, c'est bien. La définir et savoir l'expliquer, c'est mieux !"
+        },
+        {
+            "id": 2,
+            "stepId": 1,
+            "title": "Vérifier les conditions d'accès à l'activité",
+            "desc": "Certaines activités nécessitent une qualification ou une autorisation préalable."
+        },
+        {
+            "id": 3,
+            "stepId": 1,
+            "title": "Faire son bilan personnel",
+            "desc": "La bonne adéquation homme/projet est une des conditions de réussite d'une création d'entreprise."
+        },
+        {
+            "id": 4,
+            "stepId": 2,
+            "title": "Analyser l'environnement",
+            "desc": "Observer le marché, la concurrence, la clientèle convoitée, ses attentes."
+        },
+        {
+            "id": 5,
+            "stepId": 2,
+            "title": "Formaliser son étude de marché",
+            "desc": "Se faire accompagner durant cette étape importante est un gage de succès."
+        },
+        {
+            "id": 6,
+            "stepId": 2,
+            "title": "Définir sa stratégie d'insertion sur le marché",
+            "desc": "Cela consiste à se fixer des objectifs réalistes et prévoir les moyens à mobiliser pour les atteindre."
+        },
+        {
+            "id": 7,
+            "stepId": 3,
+            "title": "Définir son business model",
+            "desc": "C'est la clef de voûte de tout projet : il décrit comment l'entreprise va gagner de l'argent."
+        },
+        {
+            "id": 8,
+            "stepId": 3,
+            "title": "Lister les entrées et sorties d'argent",
+            "desc": "Ces informations alimenteront vos tableaux financiers."
+        },
+        {
+            "id": 9,
+            "stepId": 3,
+            "title": "Construire son business plan",
+            "desc": "C'est un document indispensable pour convaincre les partenaires et investisseurs !"
+        },
+        {
+            "id": 10,
+            "stepId": 4,
+            "title": "Faire le point sur ses apports personnels",
+            "desc": "Ils sont indispensables pour faire face aux premières dépenses et pour solliciter un emprunt bancaire."
+        },
+        {
+            "id": 11,
+            "stepId": 4,
+            "title": "Chercher des solutions financières",
+            "desc": "Elles sont multiples : prêt d'honneur, prêt bancaire, levée de fonds..."
+        },
+        {
+            "id": 12,
+            "stepId": 4,
+            "title": "Identifier les aides et concours",
+            "desc": "Certaines peuvent vous concerner, vous et votre projet. Faites de la veille !"
+        },
+        {
+            "id": 13,
+            "stepId": 5,
+            "title": "Créer seul ou à plusieurs ?",
+            "desc": "Les créateurs solos ont le choix entre : entreprise individuelle, micro, EIRL, EURL, SASU."
+        },
+        {
+            "id": 14,
+            "stepId": 5,
+            "title": "Les critères de choix",
+            "desc": "La structure doit être adaptée au projet : taille, nature, ressources disponibles, risques."
+        },
+        {
+            "id": 15,
+            "stepId": 5,
+            "title": "Appréhender les implications fiscales et sociales",
+            "desc": "Elles découlent directement de la structure juridique choisie."
+        },
+        {
+            "id": 16,
+            "stepId": 6,
+            "title": "Identifier le site unique (Ancien CFE)",
+            "desc": "Il permet de réaliser toutes les démarches obligatoires en ligne : INPI, création, modifications, cessation."
+        },
+        {
+            "id": 17,
+            "stepId": 6,
+            "title": "Préparer son installation",
+            "desc": "Nom de domaine, registres particuliers — pensez aux démarches à effectuer avant l'immatriculation."
+        },
+        {
+            "id": 18,
+            "stepId": 6,
+            "title": "Donner vie à son entreprise",
+            "desc": "L'entreprise est immatriculée. Elle a une existence juridique, un numéro SIREN et un code APE."
+        }
+    ]
+}

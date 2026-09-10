@@ -1,0 +1,28 @@
+# ── Système ──────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+*.log
+
+# ── Environnement Python (codex PDF) ─────────────────────────────────────────
+.codex-pdf-env/
+.codex-pdf-previews/
+
+# ── Données sensibles / volumineuses (montées en volume à l'exécution) ────────
+data/backups/
+data/logs/
+data/php_sessions/
+data/sessions/
+
+# ── Uploads (montés en volume à l'exécution) ─────────────────────────────────
+uploads/
+
+# ── Git ───────────────────────────────────────────────────────────────────────
+.git/
+.gitignore
+
+# ── PDF sources (non nécessaires dans l'image) ────────────────────────────────
+*.pdf
+
+# ── Fichiers locaux ───────────────────────────────────────────────────────────
+.env
+README.md

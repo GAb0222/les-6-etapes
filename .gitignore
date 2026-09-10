@@ -1,0 +1,17 @@
+.env
+data/admin_secret.php
+.DS_Store
+data/php_sessions/
+data/sessions/*.json
+data/sessions/archive/
+data/logs/
+data/backups/
+uploads/brands/
+tests/.tmp-sessions/
+.codex-pdf-env/
+.codex-pdf-previews/
+AUDIT_ATELIO.md
+AUDIT_ATELIO_V2.md
+ios/build/
+ios/**/xcuserdata/
+*.xcuserstate

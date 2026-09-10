@@ -1,0 +1,18 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["TEAMID.fr.foutechsolutions.sixetapes"],
+        "components": [
+          { "/": "/s/*", "comment": "Lien court de séance (QR code) : ouvre l'app sur session.php?code=…" },
+          { "/": "/session.php", "?": { "code": "?*" }, "comment": "Lien long de séance" },
+          { "/": "/leaderboard.php", "?": { "code": "?*" }, "comment": "Classement d'une séance" },
+          { "/": "/admin*", "exclude": true, "comment": "L'admin reste dans Safari" }
+        ]
+      }
+    ]
+  },
+  "webcredentials": {
+    "apps": ["TEAMID.fr.foutechsolutions.sixetapes"]
+  }
+}

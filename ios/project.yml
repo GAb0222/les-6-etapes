@@ -1,0 +1,80 @@
+# Projet Xcode généré avec XcodeGen : `cd ios && xcodegen generate`
+name: SixEtapes
+options:
+  bundleIdPrefix: fr.foutechsolutions
+  deploymentTarget:
+    iOS: "16.0"
+  createIntermediateGroups: true
+  generateEmptyDirectories: true
+
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    MARKETING_VERSION: "1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    CODE_SIGN_STYLE: Automatic
+    # Renseigner l'équipe Apple Developer ici (ou dans Xcode > Signing & Capabilities).
+    DEVELOPMENT_TEAM: ""
+
+targets:
+  SixEtapes:
+    type: application
+    platform: iOS
+    sources:
+      - path: SixEtapes
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: fr.foutechsolutions.sixetapes
+        PRODUCT_NAME: SixEtapes
+        TARGETED_DEVICE_FAMILY: "1,2"
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        SUPPORTS_MACCATALYST: NO
+    # Universal links : un QR / lien https://6etapes.foutech-solutions.fr/s/CODE ouvre
+    # directement l'app si elle est installée. Le fichier serveur correspondant est
+    # `.well-known/apple-app-site-association` (remplacer TEAMID par l'équipe Apple).
+    entitlements:
+      path: SixEtapes/SixEtapes.entitlements
+      properties:
+        com.apple.developer.associated-domains:
+          - applinks:6etapes.foutech-solutions.fr
+          - webcredentials:6etapes.foutech-solutions.fr
+    info:
+      path: SixEtapes/Info.plist
+      properties:
+        CFBundleDisplayName: Les 6 étapes
+        CFBundleName: SixEtapes
+        LSApplicationCategoryType: public.app-category.education
+        ITSAppUsesNonExemptEncryption: false
+        UILaunchScreen:
+          UIColorName: LaunchBackground
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+        UISupportedInterfaceOrientations~ipad:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationPortraitUpsideDown
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+        UIViewControllerBasedStatusBarAppearance: true
+        NSAppTransportSecurity:
+          NSAllowsArbitraryLoads: false
+          # Autorise http://127.0.0.1 / localhost pour le schéma « SixEtapes (local) ».
+          NSAllowsLocalNetworking: true
+
+schemes:
+  SixEtapes:
+    build:
+      targets:
+        SixEtapes: all
+    run:
+      config: Debug
+    archive:
+      config: Release
+  SixEtapes (local):
+    build:
+      targets:
+        SixEtapes: all
+    run:
+      config: Debug
+      environmentVariables:
+        SIXETAPES_URL: "http://127.0.0.1:8765/"

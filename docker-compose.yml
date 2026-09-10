@@ -1,0 +1,89 @@
+services:
+
+  # ── Application PHP / Apache ──────────────────────────────────────────────
+  app:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    restart: unless-stopped
+    ports:
+      - "${APP_PORT:-8080}:80"
+    volumes:
+      - ./:/var/www/html
+      - uploads_data:/var/www/html/uploads
+    environment:
+      APP_ENV: "${APP_ENV:-local}"
+      DATA_BACKEND: "${DATA_BACKEND:-mariadb}"
+      ADMIN_USERNAME: "${ADMIN_USERNAME:-admin}"
+      ADMIN_PASSWORD_HASH: "${ADMIN_PASSWORD_HASH:-}"
+      APPLE_TEAM_ID: "${APPLE_TEAM_ID:-TEAMID}"
+      DB_HOST: db
+      DB_PORT: 3306
+      DB_NAME: "${DB_NAME:-pedagogic_game}"
+      DB_USER: "${DB_USER:-pedagogic_user}"
+      DB_PASSWORD: "${DB_PASSWORD:-pedagogic_password}"
+      MAIL_HOST: mailpit
+      MAIL_PORT: 1025
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - app_network
+
+  # ── Base de données MariaDB ───────────────────────────────────────────────
+  db:
+    image: mariadb:11.4
+    restart: unless-stopped
+    environment:
+      MARIADB_DATABASE: "${DB_NAME:-pedagogic_game}"
+      MARIADB_USER: "${DB_USER:-pedagogic_user}"
+      MARIADB_PASSWORD: "${DB_PASSWORD:-pedagogic_password}"
+      MARIADB_ROOT_PASSWORD: "${DB_ROOT_PASSWORD:-root_password}"
+    ports:
+      - "${DB_PORT:-3307}:3306"
+    volumes:
+      - mariadb_data:/var/lib/mysql
+      - ./database/migrations:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+    networks:
+      - app_network
+
+  # ── Mailpit — capture des emails en local ─────────────────────────────────
+  # Interface web : http://localhost:${MAILPIT_UI_PORT:-8025}
+  # SMTP interne : mailpit:1025 (utilisé par php.ini)
+  mailpit:
+    image: axllent/mailpit:latest
+    restart: unless-stopped
+    ports:
+      - "${MAILPIT_UI_PORT:-8025}:8025"
+    networks:
+      - app_network
+
+  # ── phpMyAdmin (profil optionnel) ─────────────────────────────────────────
+  # Lancer avec : docker compose --profile tools up
+  phpmyadmin:
+    image: phpmyadmin:5
+    profiles: ["tools"]
+    restart: unless-stopped
+    ports:
+      - "${PHPMYADMIN_PORT:-8081}:80"
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - app_network
+
+volumes:
+  mariadb_data:
+  uploads_data:
+
+networks:
+  app_network:
+    driver: bridge

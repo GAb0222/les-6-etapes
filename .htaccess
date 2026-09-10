@@ -1,0 +1,40 @@
+Options -Indexes +FollowSymLinks
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# HTTPS en prod seulement — localhost / 127.0.0.1 restent en HTTP (MAMP).
+RewriteCond %{HTTPS} !=on
+RewriteCond %{HTTP_HOST} !^localhost [NC]
+RewriteCond %{HTTP_HOST} !^127\.0\.0\.1
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Bloquer l'accès HTTP aux dossiers internes (les includes PHP restent possibles).
+RewriteRule ^(data|config|src|scripts|database|docker|ios)/ - [F,L]
+
+# Lien court de séance (QR code, universal link iOS) : /s/CODE → session.php
+RewriteRule ^s/([A-Za-z0-9]{4,10})/?$ session.php?code=$1 [L,QSA]
+
+# Universal links iOS : TEAMID lu depuis APPLE_TEAM_ID (.env)
+RewriteRule ^\.well-known/apple-app-site-association$ aasa.php [L]
+
+# API REST sessions
+RewriteRule ^api/sessions/?$ api/sessions.php [L,QSA]
+RewriteRule ^api/sessions/([A-Za-z0-9]+)/([A-Za-z_]+)$ api/session_action.php?code=$1&action=$2 [L,QSA]
+</IfModule>
+
+<IfModule mod_headers.c>
+  # PWA : le service worker ne doit jamais être servi depuis un cache HTTP long.
+  <Files "sw.js">
+    Header set Cache-Control "no-cache, must-revalidate"
+  </Files>
+  # Universal links iOS : fichier JSON sans extension.
+  <Files "apple-app-site-association">
+    Header set Cache-Control "public, max-age=3600"
+  </Files>
+</IfModule>
+
+<Files "apple-app-site-association">
+  ForceType application/json
+</Files>
+
