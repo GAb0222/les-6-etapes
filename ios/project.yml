@@ -14,7 +14,7 @@ settings:
     CURRENT_PROJECT_VERSION: "1"
     CODE_SIGN_STYLE: Automatic
     # Renseigner l'équipe Apple Developer ici (ou dans Xcode > Signing & Capabilities).
-    DEVELOPMENT_TEAM: ""
+    DEVELOPMENT_TEAM: "74S43YQ863"
 
 targets:
   SixEtapes:
@@ -32,7 +32,7 @@ targets:
         SUPPORTS_MACCATALYST: NO
     # Universal links : un QR / lien https://6etapes.foutech-solutions.fr/s/CODE ouvre
     # directement l'app si elle est installée. Le fichier serveur correspondant est
-    # `.well-known/apple-app-site-association` (remplacer TEAMID par l'équipe Apple).
+    # Universal links : APPLE_TEAM_ID=74S43YQ863 (équipe Apple, pas la clé API).
     entitlements:
       path: SixEtapes/SixEtapes.entitlements
       properties:

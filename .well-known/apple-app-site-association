@@ -2,7 +2,7 @@
   "applinks": {
     "details": [
       {
-        "appIDs": ["TEAMID.fr.foutechsolutions.sixetapes"],
+        "appIDs": ["74S43YQ863.fr.foutechsolutions.sixetapes"],
         "components": [
           { "/": "/s/*", "comment": "Lien court de séance (QR code) : ouvre l'app sur session.php?code=…" },
           { "/": "/session.php", "?": { "code": "?*" }, "comment": "Lien long de séance" },
@@ -13,6 +13,6 @@
     ]
   },
   "webcredentials": {
-    "apps": ["TEAMID.fr.foutechsolutions.sixetapes"]
+    "apps": ["74S43YQ863.fr.foutechsolutions.sixetapes"]
   }
 }

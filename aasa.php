@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 require_once __DIR__ . '/src/bootstrap.php';
 
-$teamId = strtoupper(preg_replace('/[^A-Z0-9]/', '', (string) (getenv('APPLE_TEAM_ID') ?: 'TEAMID')) ?: 'TEAMID');
+$teamId = strtoupper(preg_replace('/[^A-Z0-9]/', '', (string) (getenv('APPLE_TEAM_ID') ?: '74S43YQ863')) ?: '74S43YQ863');
 $bundleId = 'fr.foutechsolutions.sixetapes';
 $appId = $teamId . '.' . $bundleId;
 

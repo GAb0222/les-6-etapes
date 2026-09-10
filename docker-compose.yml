@@ -16,7 +16,9 @@ services:
       DATA_BACKEND: "${DATA_BACKEND:-mariadb}"
       ADMIN_USERNAME: "${ADMIN_USERNAME:-admin}"
       ADMIN_PASSWORD_HASH: "${ADMIN_PASSWORD_HASH:-}"
-      APPLE_TEAM_ID: "${APPLE_TEAM_ID:-TEAMID}"
+      APPLE_TEAM_ID: "${APPLE_TEAM_ID:-74S43YQ863}"
+      ASC_ISSUER_ID: "${ASC_ISSUER_ID:-}"
+      ASC_KEY_ID: "${ASC_KEY_ID:-}"
       DB_HOST: db
       DB_PORT: 3306
       DB_NAME: "${DB_NAME:-pedagogic_game}"
